@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export default function Item({ text, id, deleteTodo, completeTodo }) {
+export default function Item({ todo, deleteTodo, completeTodo }) {
   function handleDeleteTodo(todo) {
     //return //deleteTodo(todo);
     return () => {
@@ -9,15 +9,18 @@ export default function Item({ text, id, deleteTodo, completeTodo }) {
   }
 
   function handleCompleteTodo(todo) {
-    //return //deleteTodo(todo);
     return () => {
       completeTodo(todo);
     }
   }
   return <>
-  <li key={id}>{text}
-  <button onClick={ handleDeleteTodo({ text, id }) }>delete</button>
-  <button onClick={ handleCompleteTodo({ text, id }) }>done</button>
+  <li key={todo.id}
+    className={todo.done ? 'strikethrough' : ''}
+  >
+    {todo.text}
+    {/* do these buttons need {text, done}? */}
+  <button onClick={ handleDeleteTodo(todo) }>delete</button>
+  <button onClick={ handleCompleteTodo(todo) }>done</button>
   </li>
   </>;
 }

@@ -5,10 +5,16 @@ import Item from './Item';
 export default function List ({ todos, deleteTodo, completeTodo }){
   return (
     <ul>
-  {todos.map(({ text, id, done }) => (
-      <Item className={done && 'strikethrough'} text={text} id={id} deleteTodo={deleteTodo} completeTodo={completeTodo}/>
+  {todos.map((todo) => (
+      <Item 
+      // className={done && 'strikethrough'}
+      todo={todo}
+      deleteTodo={deleteTodo}
+      completeTodo={completeTodo}
+      />
          ))}
        </ul> 
   )
 }
-
+// {done && 'strikethrough'}
+// {done ? 'strikethrough' : ''}

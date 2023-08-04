@@ -37,5 +37,5 @@
   }
 }
 li.strikethrough {
-  text-decoration-line: line-through;
+  text-decoration: line-through;
 }

@@ -31,8 +31,23 @@ export default function App() {
      else {
       return t;
      }
+     
 }))};
-  
+// function completeTodo(todo) {
+//   setTodos((prevTodos) =>
+//     prevTodos.map((t) => {
+//       if (t.id === todo.id) {
+//         return {
+//           ...t,
+//           done: true,
+//         };
+//       } else {
+//         return t;
+//       }
+//     })
+//   );
+// }
+
 
 
 //see if setTodos and filter is working
@@ -40,11 +55,15 @@ export default function App() {
   return (
     <div>
       <h1>To Dos</h1>
-      {/* <ul>
-        <Item text="scott" index="01" />
-      </ul> */}
-      <List todos={ todos } deleteTodo={ deleteTodo } completeTodo={ completeTodo }/>
-      <NewItemForm todos={ todos } setTodos={ setTodos }/>
+      <List
+        todos={ todos }
+        deleteTodo={ deleteTodo }
+        completeTodo={ completeTodo }
+      />
+      <NewItemForm
+        todos={ todos }
+        setTodos={ setTodos }
+      />
     </div>
   );
 }
