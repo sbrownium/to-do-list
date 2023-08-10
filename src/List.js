@@ -4,6 +4,7 @@ import Item from './Item';
 // TODO id problem
 export default function List ({ todos, deleteTodo, completeTodo }){
   return (
+    <>
     <ul>
   {todos.map((todo) => (
       <Item 
@@ -14,6 +15,10 @@ export default function List ({ todos, deleteTodo, completeTodo }){
       />
          ))}
        </ul> 
+       <DeleteAllDone 
+        
+       />
+       </>
   )
 }
 // {done && 'strikethrough'}

@@ -3,7 +3,7 @@ import App from './App';
 
 test('renders first To Do', () => {
   render(<App />);
-  const firstTodoText = screen.getByText(/Initial 1/i);
+  const firstTodoText = screen.getByText(/Initial 1/i);w
   expect(firstTodoText).toBeInTheDocument();
   const deleteButton = screen.getAllByText(/delete/i);
   expect(deleteButton).toBeInTheDocument();

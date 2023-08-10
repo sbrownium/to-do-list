@@ -3,6 +3,7 @@ import { useState } from 'react';
 // import Item from './Item';
 import NewItemForm from './NewItemForm';
 import List from './List';
+import DeleteAllDone from './DeleteAllDone';
 import './style.css';
 import './App.css';
 
@@ -22,10 +23,15 @@ export default function App() {
 
   function completeTodo(todo) {
     setTodos(todos.map((t) => {
-     if (t.id === todo.id) {
+     if (t.id === todo.id && t.done === false) {
       return {
         ...t,
         done: true
+      }
+     } else if (t.id === todo.id && t.done === true){
+      return {
+        ...t,
+        done: false
       }
      }
      else {
@@ -33,24 +39,6 @@ export default function App() {
      }
      
 }))};
-// function completeTodo(todo) {
-//   setTodos((prevTodos) =>
-//     prevTodos.map((t) => {
-//       if (t.id === todo.id) {
-//         return {
-//           ...t,
-//           done: true,
-//         };
-//       } else {
-//         return t;
-//       }
-//     })
-//   );
-// }
-
-
-
-//see if setTodos and filter is working
 
   return (
     <div>
@@ -71,10 +59,11 @@ export default function App() {
 // some kind of check box
 /*
 Functinoality:
-• add item
-• check as done
-• remove item
-• removal checked off
+• add item - done
+• check as done - done
+• uncheck as done - done
+• remove item - done
+• remove all checked off
 
 Display:
 • Unchecked/undone items
