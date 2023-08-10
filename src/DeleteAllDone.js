@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { useState } from 'react';
 
-export default function DeleteAllDone (){
+export default function DeleteAllDone ({todos, setTodos}){
  function handleClick (e) {
     e.preventDefault();
-    return () => {
-        setTodos(todos.filter(t =>
-         t.done === true))
-      };
+    setTodos(todos.filter((t) =>
+    t.done !== true));
   }
-    return 
-    <button onClick={handleClick}>Delete All Done</button>
-
+    return (
+    <button onClick={handleClick}>Remove Done Items</button>
+    )
 }

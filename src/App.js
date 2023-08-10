@@ -48,6 +48,10 @@ export default function App() {
         deleteTodo={ deleteTodo }
         completeTodo={ completeTodo }
       />
+      <DeleteAllDone
+        todos={ todos }
+        setTodos={ setTodos }
+      />
       <NewItemForm
         todos={ todos }
         setTodos={ setTodos }
