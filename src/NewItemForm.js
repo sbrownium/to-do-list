@@ -28,7 +28,12 @@ export default function NewItemForm( {todos, setTodos} ) {
         value={addTodos}
         onChange={e => setAddTodos(e.target.value)}
       />
-      <input type="submit" value="add" onClick={handleClick} />
+      <input
+        type="submit"
+        value="add"
+        onClick={handleClick}
+        onKeyDown={e => e.key === 'Enter' ? handleClick: ''}
+      />
     </form>  
 </>
   );

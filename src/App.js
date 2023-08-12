@@ -4,6 +4,7 @@ import { useState } from 'react';
 import NewItemForm from './NewItemForm';
 import List from './List';
 import DeleteAllDone from './DeleteAllDone';
+import MarkAllAsDone from './MarkAllAsDone';
 import './style.css';
 import './App.css';
 
@@ -15,6 +16,14 @@ export default function App() {
     {text: 'Initial 3', id: 224 , done: false}
   ];
   const [todos, setTodos] = useState(initialSetTodos);
+  const [markAll, setMarkAll] = useState(false);
+
+  // function markAllItemsDone (){
+  //   if (setMarkAll(!markAll)) {
+    
+  //   }
+    
+  // }
  
   function deleteTodo(todo) {
     setTodos(todos.filter(t =>
@@ -37,8 +46,14 @@ export default function App() {
      else {
       return t;
      }
-     
-}))};
+  }))};
+  // function changeButtonText(){
+  //   if (todos.every(todo =>
+  //     todo.done === true))
+  //      {
+  //       return {buttonText} = 'Unmark All As Done'
+  //     }
+  // } 
 
   return (
     <div>
@@ -48,9 +63,15 @@ export default function App() {
         deleteTodo={ deleteTodo }
         completeTodo={ completeTodo }
       />
+      <MarkAllAsDone
+        todos={ todos }
+        setTodos={ setTodos }
+      />
       <DeleteAllDone
         todos={ todos }
         setTodos={ setTodos }
+        markAll={ markAll }
+        setMarkAll={ setMarkAll }
       />
       <NewItemForm
         todos={ todos }
@@ -67,14 +88,14 @@ Functinoality:
 • check as done - done
 • uncheck as done - done
 • remove item - done
-• remove all checked off
+• remove all checked off - done
 
 Display:
-• Unchecked/undone items
-• box or whatever next item to check off
-• Title
-• Add item button
-• text box for new items
+• Unchecked/undone items - done
+• box or whatever next item to check off - done
+• Title - done
+• Add item button - done
+• text box for new items - done
 • check off all items
 
 7/28 Homework:
