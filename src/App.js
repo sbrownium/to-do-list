@@ -77,7 +77,7 @@ Functinoality:
 • uncheck as done - done
 • remove item - done
 • remove all checked off - done
-• add keys that are not just indices
+• add keys that are not just indices - done
 • add more tests
 
 Display:
