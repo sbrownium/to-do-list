@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-let nextId = 0;
+// let nextId = 0;
 
 export default function NewItemForm( {todos, setTodos} ) {
   const [addTodos, setAddTodos] = useState('');
@@ -12,7 +12,7 @@ export default function NewItemForm( {todos, setTodos} ) {
   e.preventDefault()
     setTodos([
       ...todos,
-      { id: nextId++, text: addTodos, done: false }
+      { id: crypto.randomUUID(), text: addTodos, done: false }
     ])
     setAddTodos('');
     }

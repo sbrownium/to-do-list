@@ -1,6 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
-// import Item from './Item';
+import { useState, useMemo } from 'react';
 import NewItemForm from './NewItemForm';
 import List from './List';
 import DeleteAllDone from './DeleteAllDone';
@@ -16,15 +14,12 @@ export default function App() {
     {text: 'Initial 3', id: 224 , done: false}
   ];
   const [todos, setTodos] = useState(initialSetTodos);
-  const [markAll, setMarkAll] = useState(false);
+  const markAll = useMemo(
+    () => (todos.every(todo =>
+          todo.done === true)),
+    [todos]
+  );
 
-  // function markAllItemsDone (){
-  //   if (setMarkAll(!markAll)) {
-    
-  //   }
-    
-  // }
- 
   function deleteTodo(todo) {
     setTodos(todos.filter(t =>
      t.id !== todo.id))
@@ -46,16 +41,10 @@ export default function App() {
      else {
       return t;
      }
-  }))};
-  // function changeButtonText(){
-  //   if (todos.every(todo =>
-  //     todo.done === true))
-  //      {
-  //       return {buttonText} = 'Unmark All As Done'
-  //     }
-  // } 
+  }))
+};
 
-  return (
+return (
     <div>
       <h1>To Dos</h1>
       <List
@@ -66,12 +55,11 @@ export default function App() {
       <MarkAllAsDone
         todos={ todos }
         setTodos={ setTodos }
+        markAll={ markAll }
       />
       <DeleteAllDone
         todos={ todos }
         setTodos={ setTodos }
-        markAll={ markAll }
-        setMarkAll={ setMarkAll }
       />
       <NewItemForm
         todos={ todos }
@@ -89,6 +77,8 @@ Functinoality:
 • uncheck as done - done
 • remove item - done
 • remove all checked off - done
+• add keys that are not just indices
+• add more tests
 
 Display:
 • Unchecked/undone items - done
@@ -96,7 +86,7 @@ Display:
 • Title - done
 • Add item button - done
 • text box for new items - done
-• check off all items
+• check off all items - done
 
 7/28 Homework:
 • upload app to Git ✓
