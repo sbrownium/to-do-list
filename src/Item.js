@@ -24,4 +24,3 @@ export default function Item({ todo, deleteTodo, completeTodo }) {
   </li>
   </>;
 }
- 
