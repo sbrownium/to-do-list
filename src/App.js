@@ -6,12 +6,11 @@ import MarkAllAsDone from './MarkAllAsDone';
 import './style.css';
 import './App.css';
 
-
 export default function App() {
   const initialSetTodos = [
-    {text: 'Initial 1', id: 222 , done: false},
-    {text: 'Initial 2', id: 223 , done: false},
-    {text: 'Initial 3', id: 224 , done: false}
+    {text: 'Initial 1', id: crypto.randomUUID(), done: false},
+    {text: 'Initial 2', id: crypto.randomUUID(), done: false},
+    {text: 'Initial 3', id: crypto.randomUUID(), done: false}
   ];
   const [todos, setTodos] = useState(initialSetTodos);
   const markAll = useMemo(
