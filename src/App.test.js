@@ -19,4 +19,7 @@ if click a button is the correct thing displayed
 2. put text into add input
 3. simulate click on add button
 4. test that new todo is in the todo list
+
+have terminal autocomplete branch names
+remove password from push
 */
