@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event'
 import App from './App';
 
 test('renders first To Do', () => {
@@ -7,6 +8,12 @@ test('renders first To Do', () => {
   expect(firstTodoText).toBeInTheDocument();
   const deleteButton = screen.getAllByText(/delete/i);
   expect(deleteButton.length).toBe(3);
+});
+test('Add Items', async () => {
+  const user = userEvent.setup()
+  render(<App />);
+  const firstTodoText = screen.getByText(/add/i);
+  expect(firstTodoText).toBeInTheDocument();
 });
 /*
 Are things displayed correctly?
