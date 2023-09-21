@@ -6,12 +6,11 @@ import MarkAllAsDone from './MarkAllAsDone';
 import './style.css';
 import './App.css';
 
-
 export default function App() {
   const initialSetTodos = [
-    {text: 'Initial 1', id: 222 , done: false},
-    {text: 'Initial 2', id: 223 , done: false},
-    {text: 'Initial 3', id: 224 , done: false}
+    {text: 'Initial 1', id: crypto.randomUUID(), done: false},
+    {text: 'Initial 2', id: crypto.randomUUID(), done: false},
+    {text: 'Initial 3', id: crypto.randomUUID(), done: false}
   ];
   const [todos, setTodos] = useState(initialSetTodos);
   const markAll = useMemo(
@@ -78,7 +77,7 @@ Functinoality:
 • remove item - done
 • remove all checked off - done
 • add keys that are not just indices - done
-• add more tests
+• add more tests - ip
 
 Display:
 • Unchecked/undone items - done

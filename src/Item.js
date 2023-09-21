@@ -19,8 +19,8 @@ export default function Item({ todo, deleteTodo, completeTodo }) {
   >
     {todo.text}
     {/* do these buttons need {text, done}? */}
-  <button onClick={ handleDeleteTodo(todo) }>delete</button>
-  <button onClick={ handleCompleteTodo(todo) }>done</button>
+  <button onClick={ handleDeleteTodo(todo) } className='deleteBtn'>delete</button>
+  <button onClick={ handleCompleteTodo(todo) }className='doneBtn'>done</button>
   </li>
   </>;
 }

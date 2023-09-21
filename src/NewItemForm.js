@@ -1,23 +1,19 @@
 import * as React from 'react';
 import { useState } from 'react';
 
-// let nextId = 0;
-
 export default function NewItemForm( {todos, setTodos} ) {
   const [addTodos, setAddTodos] = useState('');
   
-
   function handleClick (e){
-  //  allToDos.concat({value})
   e.preventDefault()
+  if (addTodos.length > 0){
     setTodos([
       ...todos,
       { id: crypto.randomUUID(), text: addTodos, done: false }
     ])
     setAddTodos('');
-    }
+    }}
   return (
-    // <form onSubmit={handleSubmit}> 
     <>
     <form>
       <label>

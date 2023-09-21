@@ -13,7 +13,6 @@ export default function MarkAllAsDone({todos, setTodos, markAll}) {
         }
         else {
             setTodos(todos.map((t) => {
-                // if (t.done !== true) 
                     return {
                         ...t,
                         done: true
